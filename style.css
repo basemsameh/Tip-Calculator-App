@@ -1,0 +1,212 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Very-dark-cyan: #00494d;
+  --New-color: #22c0a7;
+  --Dark-grayish-yan: hsl(186, 14%, 43%);
+  --Grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Very-light-grayish-cyan: #f4fafa;
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--Light-grayish-cyan);
+}
+
+header {
+  text-align: center;
+  padding: 40px;
+}
+
+main {
+  border-radius: 20px;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  background-color: var(--White);
+  padding: 20px;
+}
+
+label {
+  color: var(--Dark-grayish-yan);
+}
+
+label span {
+  margin-left: 50px;
+  color: #f66;
+}
+
+main .bill,
+main .people {
+  height: 45px;
+  margin: 5px 0 20px;
+  border-radius: 5px;
+  background-color: var(--Very-light-grayish-cyan);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+main .bill::before,
+main .people::before {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+
+main .bill::before {
+  content: url(images/icon-dollar.svg);
+}
+
+main .people::before {
+  content: url(images/icon-person.svg);
+}
+
+main form input {
+  display: block;
+  border: none;
+  background-color: var(--Very-light-grayish-cyan);
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  text-align: right;
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+  color: var(--Very-dark-cyan);
+  font-weight: bold;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: var(--Grayish-cyan);
+}
+
+input:focus {
+  outline: 2px solid var(--Very-dark-cyan);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+main form .btns {
+  margin: 5px 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main form .btns button,
+main form .btns input {
+  margin: 8px;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 120px;
+  font-size: 20px;
+  font-family: "Space Mono", monospace;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+main form .btns button {
+  background-color: var(--Very-dark-cyan);
+  color: var(--White);
+  border: none;
+}
+
+main form .btns button:hover {
+  background-color: #9fe8df;
+}
+
+main form .btns input {
+  text-align: center;
+  color: var(--Very-dark-cyan);
+  font-weight: bold;
+}
+
+main .result {
+  background-color: var(--Very-dark-cyan);
+  color: var(--New-color);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: right;
+  font-size: 22px;
+}
+
+main .result button {
+  width: 100%;
+  padding: 10px;
+  color: var(--Very-dark-cyan);
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  background-color: #0d686d;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+main .result button.hover:hover {
+  background-color: #9fe8df;
+}
+
+main .result p {
+  margin: 20px 10px;
+  position: relative;
+  font-size: 30px;
+}
+
+main .result p::before {
+  color: var(--Light-grayish-cyan);
+  font-size: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: text;
+}
+
+main .result p:nth-of-type(1)::before {
+  content: 'Tip Amount';
+}
+
+main .result p:nth-of-type(2)::before {
+  content: 'Total';
+}
+
+main .result p::after {
+  content: '/ person';
+  font-size: 12px;
+  color: var(--Grayish-cyan);
+  position: absolute;
+  top: 22px;
+  left: 0;
+}
+
+@media (min-width: 700px) {
+  main {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  form {
+    width: 49%;
+  }
+
+  .result {
+    width: 49%;
+  }
+}
+
+@media (min-width: 900px) {
+  main {
+    width: 850px;
+    margin: 0 auto;
+  }
+}
