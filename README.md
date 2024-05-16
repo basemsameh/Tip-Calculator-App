@@ -40,7 +40,7 @@ This is a simple tip calculator web application that allows users to calculate t
 
 ## Demo
 
-You can view a live demo of the tip calculator app **[Here](https://basemsameh.github.io/Tip-Calculator-App/)**. (Replace # with the actual link to your live demo if available)
+You can view a live demo of the tip calculator app **[Here](https://basemsameh.github.io/Tip-Calculator-App/)**.
 
 ## Author
 
