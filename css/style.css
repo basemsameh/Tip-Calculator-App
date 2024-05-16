@@ -1,0 +1,259 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Very-dark-cyan: #00494d;
+  --New-color: #22c0a7;
+  --Dark-grayish-yan: #5e7a7d;
+  --Grayish-cyan: #7f9c9f;
+  --Light-grayish-cyan: #c5e4e7;
+  --Very-light-grayish-cyan: #f4fafa;
+  --White: #ffffff;
+}
+
+body {
+  background-color: var(--Light-grayish-cyan);
+  display: grid;
+  place-items: center;
+  font-family: "Space Mono", monospace;
+  height: 100vh;
+}
+
+/* Main */
+main {
+  background-color: var(--Light-grayish-cyan);
+}
+
+/* Figure */
+figure {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Form */
+form {
+  background-color: var(--White);
+  padding: 30px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  max-width: 910px;
+}
+
+/* Label */
+label {
+  color: var(--Dark-grayish-yan);
+  font-size: 20px;
+}
+
+label span {
+  margin-left: 50px;
+  font-size: 16px;
+  color: #f66;
+  display: none;
+}
+
+label span.show {
+  display: inline;
+}
+
+.bill,
+.people {
+  height: 45px;
+  margin: 5px 0 20px;
+  border-radius: 5px;
+  background-color: var(--Very-light-grayish-cyan);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.bill::before,
+.people::before {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+
+.bill::before {
+  content: url(images/icon-dollar.svg);
+}
+
+.people::before {
+  content: url(images/icon-person.svg);
+}
+
+input {
+  display: block;
+  border: none;
+  background-color: var(--Very-light-grayish-cyan);
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+  text-align: right;
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+  color: var(--Very-dark-cyan);
+  font-weight: bold;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+input:hover {
+  border: 1px solid var(--New-color);
+}
+
+input::placeholder {
+  color: var(--Grayish-cyan);
+}
+
+input:focus {
+  outline: 2px solid var(--Very-dark-cyan);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btns {
+  margin: 20px 0 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btns button,
+.btns input {
+  margin: 0 15px 15px 0;
+  padding: 5px;
+  border-radius: 5px;
+  height: 40px;
+  width: 120px;
+  font-size: 20px;
+  font-family: "Space Mono", monospace;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btns button {
+  background-color: var(--Very-dark-cyan);
+  color: var(--White);
+  border: none;
+}
+
+.btns button.active {
+  color: #00494d;
+  background-color: #22c0a7;
+}
+
+.btns input.active {
+  background-color: #f4fafa;
+  outline: 1px solid #22c0a7;
+  text-align: right;
+}
+
+.btns button:hover {
+  background-color: #9fe8df;
+}
+
+.btns input {
+  text-align: center;
+  color: var(--Very-dark-cyan);
+  font-weight: bold;
+}
+
+.result {
+  background-color: var(--Very-dark-cyan);
+  color: var(--New-color);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: right;
+  font-size: 22px;
+}
+
+.result button {
+  width: 100%;
+  padding: 10px;
+  color: var(--Very-dark-cyan);
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  background-color: #0d686d;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.result .active {
+  background-color: #22c0a7;
+  cursor: pointer;
+}
+
+.result .active:hover {
+  background-color: #9fe8df;
+}
+
+.result p {
+  margin: 20px 10px;
+  position: relative;
+  font-size: 30px;
+}
+
+.result p::before {
+  color: var(--Light-grayish-cyan);
+  font-size: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: text;
+}
+
+.result p:nth-of-type(1)::before {
+  content: "Tip Amount";
+}
+
+.result p:nth-of-type(2)::before {
+  content: "Total";
+}
+
+.result p::after {
+  content: "/ person";
+  font-size: 12px;
+  color: var(--Grayish-cyan);
+  position: absolute;
+  top: 22px;
+  left: 0;
+}
+
+@media (min-width: 750px) {
+  form {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+  }
+
+  .content {
+    width: 48%;
+  }
+
+  .result {
+    width: 48%;
+    position: relative;
+    padding: 20px;
+  }
+
+  .result p {
+    font-size: 40px;
+  }
+
+  .result button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    width: 85%;
+  }
+}
